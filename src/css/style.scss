@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box !important;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    display: flex;
+}
+
+.workster-logo {
+    width: 36px;
+}
+
+nav {
+    height: 100vh;
+    width: max-content;
+    padding: 32px 16px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #ccc;
+
+    .workster-logo {
+        margin: 0 0 40px 0;
+    }
+
+    .section-title {
+        margin: 0 0 12px 8px;
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+
+    .bottom-section {
+        align-self: flex-end;
+    }
+
+    .nav-section {
+        &:last-child {
+            margin-top: 24px;
+        }
+    }
+
+    .nav-item {
+        width: 100%;
+        margin: 8px 0;
+        padding: 16px 60px 16px 32px;
+        display: flex;
+        align-items: center;
+        border-radius: 24px;
+        cursor: pointer;
+        transition: 0.1s ease-out;
+        transform: translateX(-24px);
+
+        p,
+        span {
+            color: #777;
+        }
+
+        &:hover,
+        &:focus {
+            background: #eee;
+
+            p,
+            span {
+                color: #555;
+            }
+        }
+
+        &.active {
+            background: #000;
+
+            p,
+            span {
+                color: #fff;
+            }
+        }
+
+        img {
+            height: 1rem;
+        }
+
+
+        p {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        span.material-symbols-outlined {
+            padding: 0 18px 0 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+    }
+}
