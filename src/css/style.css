@@ -1,13 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box !important;
   padding: 0px;
   margin: 0px;
 }
 
-.container {
+button {
   display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button div {
+  font-weight: 600;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: min-content auto;
 }
 
 .workster-logo {
@@ -91,5 +104,67 @@ nav .nav-item span.material-symbols-outlined {
   padding: 0 18px 0 0;
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+.content {
+  padding: 16px 28px;
+  display: flex;
+}
+
+@media (min-device-aspect-ratio: 21 / 9) {
+  .content {
+    padding: 16px 10rem;
+  }
+}
+
+.header-container {
+  height: min-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-container button {
+  font-weight: 500;
+  background: #eee;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  column-gap: 4px;
+}
+
+.header-container button span {
+  font-size: 1.1rem;
+}
+
+.header-right {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.header-right .job-btn {
+  background: #10cf66;
+  color: #fff;
+}
+
+.header-right .notification-btn {
+  position: relative;
+  background: none;
+}
+
+.header-right .notification-dot {
+  height: 4px;
+  width: 4px;
+  background-color: #10cf66;
+  border-radius: 50%;
+  position: absolute;
+  right: 6px;
+  top: 2px;
+}
+
+.header-right img {
+  height: 32px;
 }
 /*# sourceMappingURL=style.css.map */
