@@ -18,6 +18,10 @@ button div {
   font-weight: 600;
 }
 
+div {
+  font-size: 0.95rem;
+}
+
 .container {
   display: grid;
   grid-template-columns: min-content auto;
@@ -109,11 +113,27 @@ nav .nav-item span.material-symbols-outlined {
 .content {
   padding: 16px 28px;
   display: flex;
+  flex-direction: column;
+}
+
+.content button {
+  height: min-content;
+  font-weight: 500;
+  background: #eee;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  column-gap: 4px;
+  transition: 0.1s ease-out;
+}
+
+.content button span {
+  font-size: 1.1rem;
 }
 
 @media (min-device-aspect-ratio: 21 / 9) {
   .content {
-    padding: 16px 10rem;
+    padding: 16px 16rem;
   }
 }
 
@@ -125,16 +145,7 @@ nav .nav-item span.material-symbols-outlined {
 }
 
 .header-container button {
-  font-weight: 500;
   background: #eee;
-  padding: 10px 12px;
-  border-radius: 16px;
-  font-size: 0.8rem;
-  column-gap: 4px;
-}
-
-.header-container button span {
-  font-size: 1.1rem;
 }
 
 .header-right {
@@ -166,5 +177,159 @@ nav .nav-item span.material-symbols-outlined {
 
 .header-right img {
   height: 32px;
+}
+
+.employee-header {
+  margin: 48px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employee-details {
+  display: grid;
+  column-gap: 12px;
+  row-gap: 8px;
+  grid-template-areas: "name name" "company title";
+}
+
+.employee-details-wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.employee-actions {
+  display: flex;
+  column-gap: 12px;
+}
+
+.employee-company {
+  color: #333;
+  font-weight: 500;
+  grid-area: company;
+}
+
+.employee-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+  grid-area: name;
+}
+
+.employee-title {
+  grid-area: title;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+.tabs {
+  margin: 60px 0 40px 0;
+  display: flex;
+  column-gap: 12px;
+}
+
+.tabs button {
+  padding: 10px 16px;
+  background: #fff;
+  color: #777;
+  border-radius: 24px;
+}
+
+.tabs button:hover {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+.tabs button.active, .tabs button:active {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.tabs button.active span,
+.tabs button.active div, .tabs button:active span,
+.tabs button:active div {
+  color: #000;
+}
+
+.tabs button div {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.bio {
+  line-height: 1.5;
+  grid-area: about-bio;
+}
+
+.about-tab {
+  display: flex;
+  column-gap: 40px;
+}
+
+.summary {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding: 24px 28px;
+  border-radius: 12px;
+  background: #f8f7fc;
+}
+
+.summary .salary {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.summary .summary-details {
+  margin-top: 12px;
+  display: grid;
+  grid-template-areas: "section-icon section-value" "section-icon section-category";
+  justify-content: start;
+  column-gap: 12px;
+}
+
+.summary .summary-details-icon {
+  height: 44px;
+  width: 44px;
+  padding-bottom: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  grid-area: section-icon;
+}
+
+.summary .summary-details-icon span {
+  font-size: 1.3rem;
+}
+
+.summary .summary-details-value {
+  font-weight: 700;
+  font-size: 0.9rem;
+  grid-area: section-value;
+}
+
+.summary .summary-details-category {
+  color: #777;
+  font-size: 0.8rem;
+  grid-area: section-category;
+}
+
+.summary-text {
+  margin-top: 16px;
+  max-width: 260px;
+  color: #777;
+  line-height: 1.5;
+  font-size: 0.85rem;
 }
 /*# sourceMappingURL=style.css.map */
