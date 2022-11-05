@@ -1,0 +1,79 @@
+.experience {
+    .work {
+        margin-top: 40px;
+
+        display: grid;
+        grid-template-areas:
+            "work-icon work-title work-title"
+            "work-icon work-subtitle work-duration"
+            "work-icon work-desc work-desc"
+        ;
+        column-gap: 12px;
+        row-gap: 8px;
+        grid-template-columns: 48px auto auto;
+
+        &-icon {
+            width: 48px;
+            height: 48px;
+            padding-bottom: 1px;
+            border: 1px solid #eaeaea;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: work-icon;
+        }
+
+        ;
+
+        &-title {
+            grid-area: work-title;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        &-subtitle {
+            display: flex;
+            column-gap: 6px;
+            grid-area: work-subtitle;
+
+            div {
+                font-size: 0.9rem;
+
+            }
+
+            .work-divider {
+                font-size: 1.3rem;
+                line-height: 0.75;
+                font-weight: 800 !important;
+            }
+        }
+
+
+        &-location {
+            grid-area: work-location;
+        }
+
+
+
+        &-company {
+            grid-area: work-company;
+        }
+
+        &-duration {
+            justify-self: flex-end;
+            align-self: flex-end;
+            grid-area: work-duration;
+            font-weight: 800;
+        }
+
+        &-desc {
+            margin-top: 6px;
+            color: #999;
+            line-height: 1.5;
+            font-weight: 500;
+            font-size: 0.9rem;
+            grid-area: work-desc;
+        }
+    }
+}

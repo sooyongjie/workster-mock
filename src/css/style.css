@@ -1,4 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap");
+.experience .work {
+  margin-top: 40px;
+  display: grid;
+  grid-template-areas: "work-icon work-title work-title" "work-icon work-subtitle work-duration" "work-icon work-desc work-desc";
+  column-gap: 12px;
+  row-gap: 8px;
+  grid-template-columns: 48px auto auto;
+}
+
+.experience .work-icon {
+  width: 48px;
+  height: 48px;
+  padding-bottom: 1px;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: work-icon;
+}
+
+.experience .work-title {
+  grid-area: work-title;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.experience .work-subtitle {
+  display: flex;
+  column-gap: 6px;
+  grid-area: work-subtitle;
+}
+
+.experience .work-subtitle div {
+  font-size: 0.9rem;
+}
+
+.experience .work-subtitle .work-divider {
+  font-size: 1.3rem;
+  line-height: 0.75;
+  font-weight: 800 !important;
+}
+
+.experience .work-location {
+  grid-area: work-location;
+}
+
+.experience .work-company {
+  grid-area: work-company;
+}
+
+.experience .work-duration {
+  justify-self: flex-end;
+  align-self: flex-end;
+  grid-area: work-duration;
+  font-weight: 800;
+}
+
+.experience .work-desc {
+  margin-top: 6px;
+  color: #999;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 0.9rem;
+  grid-area: work-desc;
+}
+
 * {
   font-family: 'Inter', sans-serif;
   box-sizing: border-box !important;
@@ -111,7 +178,10 @@ nav .nav-item span.material-symbols-outlined {
 }
 
 .content {
-  padding: 16px 28px;
+  justify-self: center;
+  max-width: 100rem;
+  margin-bottom: 5rem;
+  padding: 16px 48px;
   display: flex;
   flex-direction: column;
 }
@@ -133,7 +203,7 @@ nav .nav-item span.material-symbols-outlined {
 
 @media (min-device-aspect-ratio: 21 / 9) {
   .content {
-    padding: 16px 16rem;
+    padding: 16px 10rem;
   }
 }
 
@@ -226,7 +296,7 @@ hr {
 }
 
 .tabs {
-  margin: 60px 0 40px 0;
+  margin: 60px 0 0px 0;
   display: flex;
   column-gap: 12px;
 }
@@ -259,12 +329,13 @@ hr {
 }
 
 .section-title {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
+  margin: 48px 0 0px 0;
+  font-size: 1.25rem;
   font-weight: 800;
 }
 
 .bio {
+  margin-top: 20px;
   line-height: 1.5;
   grid-area: about-bio;
 }

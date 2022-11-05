@@ -64,7 +64,62 @@ function Employees() {
                         <div className="bio">Once your resume is on Indeed, you can choose to make it "Public" or "Private." There are benefits to both options. When you make your resume public, is visible to anyone. Visitors to a public resume page can forward, save, or download the resume as a PDF or email you through a secure contact form</div>
                     </div>
                     <div className="experience">
-                        {/* <div className="section-title">Work Experience</div> */}
+                        <div className="section-title">Work Experience</div>
+                        <div className="work">
+                            <div className="work-icon">
+                                <span class=" material-symbols-outlined">
+                                    stadia_controller
+                                </span>
+                            </div>
+                            <div className="work-title">Senior Game Developer</div>
+                            <div className="work-subtitle">
+                                <div className="work-location">London</div>
+                                <div className="work-divider">·</div>
+                                <div className="work-company">Google</div>
+                            </div>
+                            <div className="work-duration">2020 - 2022</div>
+                            <div className="work-desc">
+                                Minimum 3 shifts a week Monday to firday with the ability to work an 8 to 9 hour time each week between the hours of 7 AM to 7 PM.
+                            </div>
+                        </div>
+
+                        <div className="work">
+                            <div className="work-icon">
+                                <span class="material-symbols-outlined">
+                                    engineering
+                                </span>
+                            </div>
+                            <div className="work-title">Senior Engineer</div>
+                            <div className="work-subtitle">
+                                <div className="work-location">London</div>
+                                <div className="work-divider">·</div>
+                                <div className="work-company">Nest</div>
+                            </div>
+                            <div className="work-duration">2017 - 2020</div>
+                            <div className="work-desc">
+                                Offered great benefits package valued at over $0.500 that includes full coverage for employee health
+                            </div>
+                        </div>
+                    </div>
+                    <div className="experience">
+                        <div className="section-title">Education</div>
+                        <div className="work">
+                            <div className="work-icon">
+                                <span class="material-symbols-outlined">
+                                    psychology
+                                </span>
+                            </div>
+                            <div className="work-title">Big Brain University</div>
+                            <div className="work-subtitle">
+                                <div className="work-location">Massachusetts</div>
+                                <div className="work-divider">·</div>
+                                <div className="work-company">Psychology</div>
+                            </div>
+                            <div className="work-duration">2020 - 2022</div>
+                            <div className="work-desc">
+                                Heathcare interest - Become an expert on emerging healthcare programs and excited to speak with providers about the future of healthcare.
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col">
