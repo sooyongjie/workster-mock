@@ -1,4 +1,84 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap");
+nav {
+  height: 100vh;
+  width: max-content;
+  padding: 32px 16px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+nav .workster-logo {
+  margin: 0 0 40px 0;
+}
+
+nav .section-title {
+  margin: 0 0 12px 8px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+nav .bottom-section {
+  align-self: flex-end;
+}
+
+nav .nav-section:last-child {
+  margin-top: 24px;
+}
+
+nav .nav-item {
+  width: 100%;
+  margin: 8px 0;
+  padding: 16px 60px 16px 32px;
+  display: flex;
+  align-items: center;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  transform: translateX(-24px);
+}
+
+nav .nav-item p,
+nav .nav-item span {
+  color: #777;
+}
+
+nav .nav-item:hover, nav .nav-item:focus {
+  background: #eee;
+}
+
+nav .nav-item:hover p,
+nav .nav-item:hover span, nav .nav-item:focus p,
+nav .nav-item:focus span {
+  color: #555;
+}
+
+nav .nav-item.active {
+  background: #000;
+}
+
+nav .nav-item.active p,
+nav .nav-item.active span {
+  color: #fff;
+}
+
+nav .nav-item img {
+  height: 1rem;
+}
+
+nav .nav-item p {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+nav .nav-item span.material-symbols-outlined {
+  padding: 0 18px 0 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .experience .work {
   margin-top: 40px;
   display: grid;
@@ -73,6 +153,10 @@
   margin: 0px;
 }
 
+#root {
+  overflow: hidden;
+}
+
 button {
   display: flex;
   align-items: center;
@@ -86,7 +170,7 @@ button div {
 }
 
 div {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .container {
@@ -98,92 +182,20 @@ div {
   width: 36px;
 }
 
-nav {
-  height: 100vh;
-  width: max-content;
-  padding: 32px 16px 24px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 1px solid #ccc;
-}
-
-nav .workster-logo {
-  margin: 0 0 40px 0;
-}
-
-nav .section-title {
-  margin: 0 0 12px 8px;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-nav .bottom-section {
-  align-self: flex-end;
-}
-
-nav .nav-section:last-child {
-  margin-top: 24px;
-}
-
-nav .nav-item {
-  width: 100%;
-  margin: 8px 0;
-  padding: 16px 60px 16px 32px;
-  display: flex;
-  align-items: center;
-  border-radius: 24px;
-  cursor: pointer;
-  transition: 0.1s ease-out;
-  transform: translateX(-24px);
-}
-
-nav .nav-item p,
-nav .nav-item span {
-  color: #777;
-}
-
-nav .nav-item:hover, nav .nav-item:focus {
-  background: #eee;
-}
-
-nav .nav-item:hover p,
-nav .nav-item:hover span, nav .nav-item:focus p,
-nav .nav-item:focus span {
-  color: #555;
-}
-
-nav .nav-item.active {
-  background: #000;
-}
-
-nav .nav-item.active p,
-nav .nav-item.active span {
-  color: #fff;
-}
-
-nav .nav-item img {
-  height: 1rem;
-}
-
-nav .nav-item p {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-nav .nav-item span.material-symbols-outlined {
-  padding: 0 18px 0 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
 .content {
   justify-self: center;
-  max-width: 100rem;
-  margin-bottom: 5rem;
+  max-height: 100vh;
   padding: 16px 48px;
+  padding-bottom: 5rem !important;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+}
+
+@media (min-device-aspect-ratio: 21 / 9) {
+  .content {
+    padding: 16px 10rem;
+  }
 }
 
 .content button {
@@ -199,12 +211,6 @@ nav .nav-item span.material-symbols-outlined {
 
 .content button span {
   font-size: 1.1rem;
-}
-
-@media (min-device-aspect-ratio: 21 / 9) {
-  .content {
-    padding: 16px 10rem;
-  }
 }
 
 .header-container {
