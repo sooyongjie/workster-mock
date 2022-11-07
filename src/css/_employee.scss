@@ -10,7 +10,7 @@
         ;
         column-gap: 12px;
         row-gap: 8px;
-        grid-template-columns: 48px auto auto;
+        grid-template-columns: 48px minmax(160px, 9999px) 90px;
 
         &-icon {
             width: 48px;
@@ -34,6 +34,7 @@
 
         &-subtitle {
             display: flex;
+            flex-wrap: wrap;
             column-gap: 6px;
             grid-area: work-subtitle;
 

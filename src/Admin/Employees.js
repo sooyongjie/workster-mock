@@ -3,17 +3,15 @@ import Placeholder from '../img/placeholder.svg'
 
 function Employees() {
     return (
-        <div>
+        <div className='content-wrapper'>
             <div className="employee-header">
-                <div className='employee-details-wrapper'>
-                    <img src={Placeholder} alt="" />
-                    <div className="employee-details">
-                        <div className="employee-name">
-                            Tim Cook
-                        </div>
-                        <div className="employee-company">Google</div>
-                        <div className="employee-title">UI/UX Designer</div>
+                <div className='employee-details'>
+                    <img className='employee-img' src={Placeholder} alt="" />
+                    <div className="employee-name">
+                        Tim Cook
                     </div>
+                    <div className="employee-company">Google</div>
+                    <div className="employee-title">UI/UX Designer</div>
                 </div>
                 <div className='employee-actions'>
                     <button>
@@ -28,6 +26,7 @@ function Employees() {
                 </div>
             </div>
             <hr />
+            {/* 
             <div className="tabs">
                 <button className='active'>
                     <span class="material-symbols-outlined">
@@ -57,6 +56,7 @@ function Employees() {
                     <div>Save for later</div>
                 </button>
             </div>
+             */}
             <div className="tab about-tab">
                 <div className="col">
                     <div>

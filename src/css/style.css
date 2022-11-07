@@ -2,12 +2,14 @@
 nav {
   height: 100vh;
   width: max-content;
-  padding: 32px 16px 24px 60px;
+  padding: 32px 0 24px 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: #fff;
   border-right: 1px solid #ccc;
   overflow-y: auto;
+  z-index: 90;
 }
 
 nav .workster-logo {
@@ -55,12 +57,14 @@ nav .nav-item:focus span {
   color: #555;
 }
 
-nav .nav-item.active {
+nav .nav-item.active, nav .nav-item:active, nav .nav-item:focus {
   background: #000;
 }
 
 nav .nav-item.active p,
-nav .nav-item.active span {
+nav .nav-item.active span, nav .nav-item:active p,
+nav .nav-item:active span, nav .nav-item:focus p,
+nav .nav-item:focus span {
   color: #fff;
 }
 
@@ -75,8 +79,14 @@ nav .nav-item p {
 
 nav .nav-item span.material-symbols-outlined {
   padding: 0 18px 0 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
 }
 
 .experience .work {
@@ -85,7 +95,7 @@ nav .nav-item span.material-symbols-outlined {
   grid-template-areas: "work-icon work-title work-title" "work-icon work-subtitle work-duration" "work-icon work-desc work-desc";
   column-gap: 12px;
   row-gap: 8px;
-  grid-template-columns: 48px auto auto;
+  grid-template-columns: 48px minmax(160px, 9999px) 90px;
 }
 
 .experience .work-icon {
@@ -108,6 +118,7 @@ nav .nav-item span.material-symbols-outlined {
 
 .experience .work-subtitle {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 6px;
   grid-area: work-subtitle;
 }
@@ -154,7 +165,8 @@ nav .nav-item span.material-symbols-outlined {
 }
 
 #root {
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 button {
@@ -175,7 +187,7 @@ div {
 
 .container {
   display: grid;
-  grid-template-columns: min-content auto;
+  grid-template-columns: auto auto;
 }
 
 .workster-logo {
@@ -185,16 +197,29 @@ div {
 .content {
   justify-self: center;
   max-height: 100vh;
-  padding: 16px 48px;
-  padding-bottom: 5rem !important;
+  padding: 16px 72px;
+  padding-bottom: 6rem !important;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 }
 
-@media (min-device-aspect-ratio: 21 / 9) {
+@media (min-aspect-ratio: 21 / 9) {
   .content {
-    padding: 16px 10rem;
+    padding: 16px 20rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .content {
+    padding: 16px 40px;
+  }
+}
+
+@media (max-width: 540px) {
+  .content {
+    padding: 16px 20px;
+    flex-direction: column;
   }
 }
 
@@ -220,8 +245,23 @@ div {
   justify-content: space-between;
 }
 
+.header-container div {
+  font-size: 0.85rem !important;
+}
+
 .header-container button {
   background: #eee;
+}
+
+.header-container button span {
+  font-weight: 600;
+  padding-bottom: 1px;
+}
+
+@media (max-width: 520px) {
+  .header-left button div {
+    display: none;
+  }
 }
 
 .header-right {
@@ -247,8 +287,8 @@ div {
   background-color: #10cf66;
   border-radius: 50%;
   position: absolute;
-  right: 6px;
-  top: 2px;
+  right: 8px;
+  top: 6px;
 }
 
 .header-right img {
@@ -258,26 +298,50 @@ div {
 .employee-header {
   margin: 48px 0;
   display: flex;
+  row-gap: 20px;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 540px) {
+  .employee-header {
+    flex-direction: column;
+  }
+}
+
+.employee-img {
+  grid-area: image;
 }
 
 .employee-details {
   display: grid;
   column-gap: 12px;
   row-gap: 8px;
-  grid-template-areas: "name name" "company title";
+  grid-template-areas: "image name name" "image company title";
 }
 
-.employee-details-wrapper {
-  display: flex;
-  align-items: center;
-  column-gap: 16px;
+@media (max-width: 540px) {
+  .employee-details {
+    row-gap: 8px;
+    grid-template-areas: "image image" "name name" "company title";
+    justify-items: center;
+  }
+  .employee-img {
+    margin-bottom: 12px;
+    width: 75%;
+  }
+  .employee-actions {
+    margin-top: 12px;
+  }
 }
 
 .employee-actions {
   display: flex;
   column-gap: 12px;
+}
+
+.employee-actions div {
+  font-size: 0.85rem !important;
 }
 
 .employee-company {
@@ -302,16 +366,25 @@ hr {
 }
 
 .tabs {
-  margin: 60px 0 0px 0;
-  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 60px);
+  margin: 42px 0 8px 0;
+  display: grid;
   column-gap: 12px;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .tabs button {
   padding: 10px 16px;
+  display: flex;
   background: #fff;
   color: #777;
   border-radius: 24px;
+}
+
+.tabs button div {
+  width: 100%;
 }
 
 .tabs button:hover {
@@ -351,7 +424,15 @@ hr {
   column-gap: 40px;
 }
 
+@media (max-width: 720px) {
+  .about-tab {
+    flex-direction: column;
+  }
+}
+
 .summary {
+  margin: 48px 0 0 0;
+  min-width: 300px;
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -404,7 +485,7 @@ hr {
 
 .summary-text {
   margin-top: 16px;
-  max-width: 260px;
+  min-width: 200px;
   color: #777;
   line-height: 1.5;
   font-size: 0.85rem;
