@@ -9,6 +9,44 @@ nav {
     border-right: 1px solid #ccc;
     overflow-y: auto;
     z-index: 90;
+    transition: 0s ease;
+
+    @media (max-width: 1000px) {
+        position: absolute;
+        transform: translateX(-100%);
+    }
+
+    &.hidden {
+        animation: slide-in 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    &.active {
+        display: flex;
+        animation: slide-out 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @keyframes slide-in {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slide-out {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
 
     .workster-logo {
         margin: 0 0 40px 0;
@@ -56,7 +94,9 @@ nav {
             }
         }
 
-        &.active, &:active, &:focus {
+        &.active,
+        &:active,
+        &:focus {
             background: #000;
 
             p,
@@ -82,7 +122,5 @@ nav {
         }
     }
 
-    @media (max-width: 1000px) {
-        display: none;
-    }
+
 }

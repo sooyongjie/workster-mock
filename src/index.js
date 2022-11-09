@@ -7,9 +7,7 @@ import './css/style.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <Admin />
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

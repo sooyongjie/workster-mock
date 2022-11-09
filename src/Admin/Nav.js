@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from '../img/logo.svg'
 // import PlaceholderImage from '../img/placeholder.svg'
 

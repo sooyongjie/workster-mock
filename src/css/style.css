@@ -10,6 +10,43 @@ nav {
   border-right: 1px solid #ccc;
   overflow-y: auto;
   z-index: 90;
+  transition: 0s ease;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    position: absolute;
+    transform: translateX(-100%);
+  }
+}
+
+nav.hidden {
+  animation: slide-in 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+nav.active {
+  display: flex;
+  animation: slide-out 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 nav .workster-logo {
@@ -81,12 +118,6 @@ nav .nav-item span.material-symbols-outlined {
   padding: 0 18px 0 0;
   font-size: 1.2rem;
   font-weight: 500;
-}
-
-@media (max-width: 1000px) {
-  nav {
-    display: none;
-  }
 }
 
 .experience .work {
@@ -258,8 +289,20 @@ div {
   padding-bottom: 1px;
 }
 
-@media (max-width: 520px) {
-  .header-left button div {
+.header-left {
+  display: flex;
+  column-gap: 8px;
+}
+
+.header-left .nav-btn {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .header-left .nav-btn {
+    display: block;
+  }
+  .header-left button {
     display: none;
   }
 }

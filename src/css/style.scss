@@ -101,9 +101,22 @@ div {
         }
     }
 
-    @media (max-width: 520px) {
-        &-left button div {
+    &-left  {
+        display: flex;
+        column-gap: 8px;
+        .nav-btn {
             display: none;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        &-left {
+            .nav-btn {
+                display: block;
+            }
+            button {
+                display: none;
+            }
         }
     }
 
